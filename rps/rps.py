@@ -108,17 +108,15 @@ now = datetime.now()
 # mm/dd/YY H:M
 dt_string = now.strftime("%m/%d/%Y %H:%M")
 
-if cs > us:
+# conditionals which check for who won
+if cs > us: # if computer score is GREATER than user score
     ww = "Computer Won!"
-if cs < us:
+if cs < us: # if computer score is LESS than user score
     ww = "User Won!"
-if cs == us:
+if cs == us: # if computer score is EQUAL to user score
     ww = "It was a tie!"
 
-#opens txt file
+# opens txt file
 with open("scores\scores.txt", "a+") as f:
-    f.write("\n\nDate and Time: {}\nUser Score: {}\nComputer Score: {}\n{}".format(dt_string,us,cs,ww))
-print("\n\nDate and Time: {}\nUser Score: {}\nComputer Score: {}".format(dt_string,us,cs))
-print(ww)
-print("Go to the scores.txt file. You can find it by going to the scores folder and double clicking \"scores.txt.\"")
-print("Thank you for playing Rock, Paper, Scissors!")
+    # logs data to text file with is assigned to the variable, "f"
+    f.write("\n\nDate and Time: {}\nUser Score: {}\nComputer Score: {}\n{}".format(dt_string,us,cs,ww)) # logs date and time of game to text file
